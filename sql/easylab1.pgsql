@@ -1206,6 +1206,475 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 
 
 --
+-- Data for Name: failed_jobs; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.failed_jobs (id, uuid, connection, queue, payload, exception, failed_at) FROM stdin;
+\.
+
+
+--
+-- Data for Name: m_metode_pembayaran; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.m_metode_pembayaran (id_met_pembayaran, nama_met_pembayaran, nomor_met_pembayaran, created_at, updated_at) FROM stdin;
+1	Cash	001	2024-07-25 22:19:33.389502	2024-07-25 22:19:33.389502
+2	Credit Card	002	2024-07-25 22:19:33.389502	2024-07-25 22:19:33.389502
+3	Insurance	003	2024-07-25 22:19:33.389502	2024-07-25 22:19:33.389502
+\.
+
+
+--
+-- Data for Name: mbhp; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mbhp (id_bhp, nama_bhp, deskripsi_bhp, harga_bhp, created_at, updated_at) FROM stdin;
+1	BHP1	Deskripsi BHP1	100.00	2024-07-25 22:20:36.533455	2024-07-25 22:20:36.533455
+2	BHP2	Deskripsi BHP2	200.00	2024-07-25 22:20:36.533455	2024-07-25 22:20:36.533455
+3	BHP3	Deskripsi BHP3	300.00	2024-07-25 22:20:36.533455	2024-07-25 22:20:36.533455
+\.
+
+
+--
+-- Data for Name: mdiagnosa; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mdiagnosa (id_diagnosa, kd_icd10, nama_diagnosa, created_at, updated_at) FROM stdin;
+1	A00	Cholera	2024-07-25 22:21:06.062204	2024-07-25 22:21:06.062204
+2	B01	Varicella	2024-07-25 22:21:06.062204	2024-07-25 22:21:06.062204
+3	C02	Malignant neoplasm of lip	2024-07-25 22:21:06.062204	2024-07-25 22:21:06.062204
+\.
+
+
+--
+-- Data for Name: mequipment; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mequipment (id_alat, merk_alat, series_alat, nama_alat, jenis_koneksi_alat, tipe_host_alat, created_at, updated_at) FROM stdin;
+1	Brand A	Series X	Analyzer	USB	Host1	2024-07-25 22:21:33.625216	2024-07-25 22:21:33.625216
+2	Brand B	Series Y	Microscope	Ethernet	Host2	2024-07-25 22:21:33.625216	2024-07-25 22:21:33.625216
+3	Brand C	Series Z	Centrifuge	WiFi	Host3	2024-07-25 22:21:33.625216	2024-07-25 22:21:33.625216
+\.
+
+
+--
+-- Data for Name: migrations; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.migrations (id, migration, batch) FROM stdin;
+5	2014_10_12_000000_create_users_table	1
+6	2014_10_12_100000_create_password_reset_tokens_table	1
+7	2019_08_19_000000_create_failed_jobs_table	1
+8	2019_12_14_000001_create_personal_access_tokens_table	1
+9	2024_07_19_184021_create_products_table	1
+\.
+
+
+--
+-- Data for Name: mjenis; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mjenis (id_jenis, nama_jenis, created_at, updated_at) FROM stdin;
+1	Jenis1	2024-07-25 22:22:17.453338	2024-07-25 22:22:17.453338
+2	Jenis2	2024-07-25 22:22:17.453338	2024-07-25 22:22:17.453338
+3	Jenis3	2024-07-25 22:22:17.453338	2024-07-25 22:22:17.453338
+\.
+
+
+--
+-- Data for Name: mlokasi; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mlokasi (id_lokasi, nama_lokasi, created_at, updated_at) FROM stdin;
+1	Main Building	2024-07-25 22:22:37.947046	2024-07-25 22:22:37.947046
+2	East Wing	2024-07-25 22:22:37.947046	2024-07-25 22:22:37.947046
+3	West Wing	2024-07-25 22:22:37.947046	2024-07-25 22:22:37.947046
+\.
+
+
+--
+-- Data for Name: mmetode_pemeriksaan; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mmetode_pemeriksaan (id_mtd_pemeriksaan, metode_pemeriksaan, created_at, updated_at) FROM stdin;
+1	Metode1	2024-07-25 22:23:53.277031	2024-07-25 22:23:53.277031
+2	Metode2	2024-07-25 22:23:53.277031	2024-07-25 22:23:53.277031
+3	Metode3	2024-07-25 22:23:53.277031	2024-07-25 22:23:53.277031
+\.
+
+
+--
+-- Data for Name: mpasien; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mpasien (nik, sim, nama, tempat_lahir, tanggal_lahir, usia, jenis_kelamin, agama, pekerjaan, status_perkawinan, alamat_lengkap, alamat_negara, alamat_provinsi, alamat_kabupaten_kota, alamat_desa, status_warga_negara, golongan_darah, created_at, updated_at, id, tekanan_darah, berat_badan, tinggi_badan, id_pasien) FROM stdin;
+123456789	987654321	John Doe	Jakarta	1980-01-01	44	Male	Christianity	Software Engineer	Married	Jl. Merdeka No. 1	Indonesia	DKI Jakarta	Jakarta	Central Jakarta	Indonesian	O	2024-05-17 22:23:40.767879	2024-07-25 22:23:40.767879	1	\N	\N	\N	\N
+345678901	765432109	Alice Brown	Bandung	1975-03-03	49	Female	Hinduism	Teacher	Widowed	Jl. Kebebasan No. 3	Indonesia	West Java	Bandung	South Bandung	Indonesian	B	2024-05-17 22:23:40.767879	2024-07-25 22:23:40.767879	2	\N	\N	\N	\N
+234567890	876543210	Jane Smith Jr	Surabaya	1990-02-02	34	Female	Islam	Doctor	Single	Jl. Kemerdekaan No. 2	Indonesia	East Java	Surabaya	East Surabaya	Indonesian	A	2024-07-25 22:23:40.767879	2024-07-26 16:56:20	3	\N	\N	\N	\N
+0000000111	10222065441	Blade Jr Wike	Semarang	1994-02-02	31	Male	Islam	Doctor	Single	\N	Indonesia	Mid Java	Semarang	Mid Surabaya	Indonesian	AO	2024-07-27 17:49:00	2024-07-27 17:49:00	4	\N	\N	\N	\N
+\.
+
+
+--
+-- Data for Name: mpegawai; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mpegawai (id_pegawai, nip_pegawai, nama_pegawai, jabatan, role_akses, password, remember_token, created_at, updated_at) FROM stdin;
+1	123456789	John Doe	Manager	admin	$2y$10$tbT7IOTjhrJut5.f/1.h0OZgE2ajUq86RpbLMtRY9Ygu0qTSfouRu	\N	2024-07-28 00:51:55.77878	2024-07-28 00:51:55.77878
+2	987654321	Jane Smith	Supervisor	user	$2y$10$tbT7IOTjhrJut5.f/1.h0OZgE2ajUq86RpbLMtRY9Ygu0qTSfouRu	\N	2024-07-28 00:51:55.77878	2024-07-28 00:51:55.77878
+3	543210987	Alice Johnson	Clerk	user	$2y$10$tbT7IOTjhrJut5.f/1.h0OZgE2ajUq86RpbLMtRY9Ygu0qTSfouRu	\N	2024-07-28 00:51:55.77878	2024-07-28 00:51:55.77878
+\.
+
+
+--
+-- Data for Name: msatuan; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.msatuan (id_satuan, nama_satuan, created_at, updated_at) FROM stdin;
+1	Satuan1	2024-07-28 00:52:21.96249	2024-07-28 00:52:21.96249
+2	Satuan2	2024-07-28 00:52:21.96249	2024-07-28 00:52:21.96249
+3	Satuan3	2024-07-28 00:52:21.96249	2024-07-28 00:52:21.96249
+\.
+
+
+--
+-- Data for Name: mspesimen; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mspesimen (id_spesimen, jenis_spesimen, nama_spesimen_display, nama_spesimen_klinis, created_at, updated_at) FROM stdin;
+1	Blood	Blood Sample	Hemoglobin	2024-07-28 00:52:45.733076	2024-07-28 00:52:45.733076
+2	Urine	Urine Sample	Urine Analysis	2024-07-28 00:52:45.733076	2024-07-28 00:52:45.733076
+3	Tissue	Tissue Sample	Biopsy	2024-07-28 00:52:45.733076	2024-07-28 00:52:45.733076
+\.
+
+
+--
+-- Data for Name: msub_lab; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.msub_lab (id_sub_lab, nama_sub_lab, created_at, updated_at) FROM stdin;
+1	Hematology Lab	2024-07-28 00:53:11.165331	2024-07-28 00:53:11.165331
+2	Microbiology Lab	2024-07-28 00:53:11.165331	2024-07-28 00:53:11.165331
+3	Biochemistry Lab	2024-07-28 00:53:11.165331	2024-07-28 00:53:11.165331
+\.
+
+
+--
+-- Data for Name: msupplier; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.msupplier (id_supplier, nama_supplier, notelp_supplier, alamat_supplier, created_at, updated_at) FROM stdin;
+1	Supplier1	081234567890	Alamat Supplier1	2024-07-28 00:53:41.485782	2024-07-28 00:53:41.485782
+2	Supplier2	081234567891	Alamat Supplier2	2024-07-28 00:53:41.485782	2024-07-28 00:53:41.485782
+3	Supplier3	081234567892	Alamat Supplier3	2024-07-28 00:53:41.485782	2024-07-28 00:53:41.485782
+\.
+
+
+--
+-- Data for Name: mtformulasi; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mtformulasi (id_formula, formula, parameter, input_parameter, created_at, updated_at) FROM stdin;
+1	Formula 1	Param A	Input A	2024-07-28 00:54:11.958394	2024-07-28 00:54:11.958394
+2	Formula 2	Param B	Input B	2024-07-28 00:54:11.958394	2024-07-28 00:54:11.958394
+3	Formula 3	Param C	Input C	2024-07-28 00:54:11.958394	2024-07-28 00:54:11.958394
+\.
+
+
+--
+-- Data for Name: mtid_test; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mtid_test (id_alat, id_test, id_mtd_pemeriksaan, metode_pemeriksaan, nama_test, created_at, updated_at) FROM stdin;
+1	1	1	Metode Pemeriksaan 1	Test 1	2024-07-28 00:54:33.467749	2024-07-28 00:54:33.467749
+2	2	2	Metode Pemeriksaan 2	Test 2	2024-07-28 00:54:33.467749	2024-07-28 00:54:33.467749
+3	3	3	Metode Pemeriksaan 3	Test 3	2024-07-28 00:54:33.467749	2024-07-28 00:54:33.467749
+\.
+
+
+--
+-- Data for Name: mtid_test_mapp; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mtid_test_mapp (id_alat, id_test, id_tindakan, nama_test, nama_tindakan, created_at, updated_at) FROM stdin;
+1	101	201	Test A	Tindakan X	2024-07-28 00:54:50.070559	2024-07-28 00:54:50.070559
+2	102	202	Test B	Tindakan Y	2024-07-28 00:54:50.070559	2024-07-28 00:54:50.070559
+3	103	203	Test C	Tindakan Z	2024-07-28 00:54:50.070559	2024-07-28 00:54:50.070559
+\.
+
+
+--
+-- Data for Name: mtindakan; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mtindakan (id_tindakan, kd_icd9, nama_tindakan, harga_tindakan, created_at, updated_at) FROM stdin;
+1	001	Blood Test	100.00	2024-07-28 00:50:25.5378	2024-07-28 00:50:25.5378
+2	002	Urine Test	50.00	2024-07-28 00:50:25.5378	2024-07-28 00:50:25.5378
+3	003	X-Ray	200.00	2024-07-28 00:50:25.5378	2024-07-28 00:50:25.5378
+\.
+
+
+--
+-- Data for Name: mtinventory; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mtinventory (id_inventory, id_bhp, id_satuan, id_jenis, id_supplier, stok_inventory, created_at, updated_at) FROM stdin;
+1	1	1	1	1	100	2024-07-28 00:55:46.764844	2024-07-28 00:55:46.764844
+2	2	2	2	2	50	2024-07-28 00:55:46.764844	2024-07-28 00:55:46.764844
+3	3	3	3	3	200	2024-07-28 00:55:46.764844	2024-07-28 00:55:46.764844
+\.
+
+
+--
+-- Data for Name: mtkonversi; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mtkonversi (id_alat, id_test, jenis_konversi, hasil_raw, hasil_konversi, pembulatan, perkalian, nilai_pengurang, penjumlahan, nilai_penjumlahan, created_at, updated_at) FROM stdin;
+1	1	Tipe A	10.5	9.0	9	1.1	1.5	2.0	11.0	2024-07-28 00:56:13.29568	2024-07-28 00:56:13.29568
+2	2	Tipe B	15.2	13.5	14	1.2	1.7	3.0	16.5	2024-07-28 00:56:13.29568	2024-07-28 00:56:13.29568
+3	3	Tipe C	20.8	19.0	19	1.3	1.8	4.0	23.0	2024-07-28 00:56:13.29568	2024-07-28 00:56:13.29568
+\.
+
+
+--
+-- Data for Name: mtqc_pabrikan; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mtqc_pabrikan (id_alat, id_test, no_lot, tgl_awal_buka_ed, tgl_akhir_buka_ed, nama_lot, level_lot, bts_bawah, bts_atas, mean, bts_tea, bts_cv, bts_d, created_at, updated_at) FROM stdin;
+1	1	Lot1	2024-01-01	2024-06-01	Lot Name 1	Level 1	0.50	1.50	1.00	0.10	0.05	0.01	2024-07-28 00:56:58.725713	2024-07-28 00:56:58.725713
+2	2	Lot2	2024-02-01	2024-07-01	Lot Name 2	Level 2	0.60	1.60	1.10	0.20	0.06	0.02	2024-07-28 00:56:58.725713	2024-07-28 00:56:58.725713
+3	3	Lot3	2024-03-01	2024-08-01	Lot Name 3	Level 3	0.70	1.70	1.20	0.30	0.07	0.03	2024-07-28 00:56:58.725713	2024-07-28 00:56:58.725713
+\.
+
+
+--
+-- Data for Name: mttindakan; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mttindakan (id_tindakan, nama_tindakan, id_jenis_lab, harga_subyek, nama_subyek_lab, id_pemeriksaan, nama_spesimen, spesimen_barcode, jenis_rujukan, rentang_bwh_umur, rentang_atas_umur, flag_kritis, nilai_kualitatif, rentang_bwh_kritis_1, rentang_atas_kritis_1, rentang_bwh_kritis_2, rentang_atas_kritis_2, flag_desimal, id_pasien, created_at, updated_at) FROM stdin;
+1	Pemeriksaan Darah Lengkap	1	100000	Hematologi	1	Darah	ABC123456	Internal	18	60	f	12.5	10	15	5	20	t	1	2024-07-28 00:57:32.402613	2024-07-28 00:57:32.402613
+2	Tes Urin	2	50000	Urinalisis	2	Urin	XYZ987654	Eksternal	5	80	t	7.8	6	9	4	10	f	2	2024-07-28 00:57:32.402613	2024-07-28 00:57:32.402613
+3	Pemeriksaan Glukosa	3	75000	Biokimia	3	Darah	LMN456789	Internal	20	70	f	5.4	4	7	3	8	t	3	2024-07-28 00:57:32.402613	2024-07-28 00:57:32.402613
+\.
+
+
+--
+-- Data for Name: mttindakan_mapp; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.mttindakan_mapp (id_tindakan, nama_tindakan, id_tindakan_luar, nama_tindakan_luar, created_at, updated_at) FROM stdin;
+1	Tindakan A	101	Tindakan Luar A	2024-08-04 14:49:00.295081	2024-08-04 14:49:00.295081
+2	Tindakan B	102	Tindakan Luar B	2024-08-04 14:49:00.295081	2024-08-04 14:49:00.295081
+3	Tindakan C	103	Tindakan Luar C	2024-08-04 14:49:00.295081	2024-08-04 14:49:00.295081
+\.
+
+
+--
+-- Data for Name: password_reset_tokens; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.password_reset_tokens (email, token, created_at) FROM stdin;
+\.
+
+
+--
+-- Data for Name: personal_access_tokens; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.personal_access_tokens (id, tokenable_type, tokenable_id, name, token, abilities, last_used_at, expires_at, created_at, updated_at) FROM stdin;
+4	App\\Models\\Pegawai	1	MyApp	846c6bfea19602f5bd93ef15e2f5119ed6d2fc65ddbd5cff0d152668ba9bc01a	["*"]	\N	\N	2024-07-22 18:05:04	2024-07-22 18:05:04
+6	App\\Models\\Pegawai	1	MyApp	365e9fddce544de0c57a4302a05e4f482f483644d5ceb3107a5772d39f901ac5	["*"]	\N	\N	2024-07-23 15:49:53	2024-07-23 15:49:53
+8	App\\Models\\Pegawai	1	MyApp	99396cfedfd673a3d47406a9af770732078778cbeb0b080ee12cbfdd1e67e534	["*"]	2024-08-07 18:53:00	\N	2024-07-27 16:36:50	2024-08-07 18:53:00
+5	App\\Models\\Pegawai	1	MyApp	58dc4de73a10bc0923e26bc2521e2b591c8a56c3b1a47f852ebccf7c0b1ba8d8	["*"]	2024-07-27 13:45:26	\N	2024-07-23 15:18:16	2024-07-27 13:45:26
+7	App\\Models\\Pegawai	1	MyApp	d2aad13720bf0d70d92743f17d4fdc58e0aa6be2dc4f3925957089ac36e1d1e5	["*"]	\N	\N	2024-07-27 16:36:18	2024-07-27 16:36:18
+\.
+
+
+--
+-- Data for Name: products; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.products (id, name, detail, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.users (id, name, email, email_verified_at, password, remember_token, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: failed_jobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.failed_jobs_id_seq', 1, false);
+
+
+--
+-- Name: m_metode_pembayaran_id_met_pembayaran_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.m_metode_pembayaran_id_met_pembayaran_seq', 3, true);
+
+
+--
+-- Name: mbhp_id_bhp_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.mbhp_id_bhp_seq', 3, true);
+
+
+--
+-- Name: mdiagnosa_id_diagnosa_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.mdiagnosa_id_diagnosa_seq', 3, true);
+
+
+--
+-- Name: mequipment_id_alat_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.mequipment_id_alat_seq', 3, true);
+
+
+--
+-- Name: migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.migrations_id_seq', 9, true);
+
+
+--
+-- Name: mjenis_id_jenis_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.mjenis_id_jenis_seq', 3, true);
+
+
+--
+-- Name: mlokasi_id_lokasi_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.mlokasi_id_lokasi_seq', 3, true);
+
+
+--
+-- Name: mmetode_pemeriksaan_id_mtd_pemeriksaan_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.mmetode_pemeriksaan_id_mtd_pemeriksaan_seq', 3, true);
+
+
+--
+-- Name: mpasien_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.mpasien_id_seq', 4, true);
+
+
+--
+-- Name: mpegawai_id_pegawai_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.mpegawai_id_pegawai_seq', 3, true);
+
+
+--
+-- Name: msatuan_id_satuan_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.msatuan_id_satuan_seq', 3, true);
+
+
+--
+-- Name: mspesimen_id_spesimen_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.mspesimen_id_spesimen_seq', 3, true);
+
+
+--
+-- Name: msub_lab_id_sub_lab_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.msub_lab_id_sub_lab_seq', 3, true);
+
+
+--
+-- Name: msupplier_id_supplier_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.msupplier_id_supplier_seq', 3, true);
+
+
+--
+-- Name: mtid_test_id_alat_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.mtid_test_id_alat_seq', 3, true);
+
+
+--
+-- Name: mtindakan_id_tindakan_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.mtindakan_id_tindakan_seq', 3, true);
+
+
+--
+-- Name: mtinventory_id_inventory_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.mtinventory_id_inventory_seq', 3, true);
+
+
+--
+-- Name: mtkonversi_id_alat_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.mtkonversi_id_alat_seq', 3, true);
+
+
+--
+-- Name: mttindakan_id_tindakan_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.mttindakan_id_tindakan_seq', 3, true);
+
+
+--
+-- Name: mttindakan_mapp_id_tindakan_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.mttindakan_mapp_id_tindakan_seq', 3, true);
+
+
+--
+-- Name: personal_access_tokens_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.personal_access_tokens_id_seq', 8, true);
+
+
+--
+-- Name: products_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.products_id_seq', 1, false);
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.users_id_seq', 1, false);
+
+
+--
 -- Name: failed_jobs failed_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
