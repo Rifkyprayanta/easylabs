@@ -28,6 +28,7 @@ Route::get('/test', function () {
 
 Route::get('/pegawai', [PegawaiController::class, 'index']);
 Route::post('/login', [RegisterController::class, 'login']);
+Route::post('/logout', [RegisterController::class, 'logout']);
 // regis pegawai di sini
 // Route::controller(RegisterController::class)->group(function(){
 //     Route::post('register', 'register');
