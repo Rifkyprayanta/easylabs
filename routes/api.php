@@ -28,26 +28,26 @@ Route::get('/test', function () {
 
 Route::get('/example', [PegawaiController::class, 'index']);
 // regis pegawai di sini
-Route::controller(RegisterController::class)->group(function(){
-    Route::post('register', 'register');
-    Route::post('login', 'login');
-    Route::post('logout', 'logout');
-});
+// Route::controller(RegisterController::class)->group(function(){
+//     Route::post('register', 'register');
+//     Route::post('login', 'login');
+//     Route::post('logout', 'logout');
+// });
 
-Route::middleware('auth:sanctum')->controller(PasienController::class)->group(function() {
-    // mencari pasien bedasarkan tanggal
-    Route::post('/cariPasienByDate', 'cariPasienByTgl');
-    // edit
-    Route::put('/pasiens/{id}', 'update');
-    // mengecek nik sebelum regis
-    Route::post('/cekNik', 'dataSebelumRegistrasi');
-    // parameter registrasi
-    Route::get('/parameterRegis','parameterRegistrasiPasien');
-});
+// Route::middleware('auth:sanctum')->controller(PasienController::class)->group(function() {
+//     // mencari pasien bedasarkan tanggal
+//     Route::post('/cariPasienByDate', 'cariPasienByTgl');
+//     // edit
+//     Route::put('/pasiens/{id}', 'update');
+//     // mengecek nik sebelum regis
+//     Route::post('/cekNik', 'dataSebelumRegistrasi');
+//     // parameter registrasi
+//     Route::get('/parameterRegis','parameterRegistrasiPasien');
+// });
 
-Route::middleware('auth:sanctum')->get('/generate-barcode', [GenerateBarcodeController::class, 'generate']);
+// Route::middleware('auth:sanctum')->get('/generate-barcode', [GenerateBarcodeController::class, 'generate']);
 
-Route::middleware('auth:sanctum')->controller(PasienController::class)->group(function() {
-    Route::post('/registrasiPasien', 'registrasiPasien');
-});
+// Route::middleware('auth:sanctum')->controller(PasienController::class)->group(function() {
+//     Route::post('/registrasiPasien', 'registrasiPasien');
+// });
 
