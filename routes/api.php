@@ -18,8 +18,8 @@ use App\Http\Controllers\api\GenerateBarcodeController;
 |
 */
 
-Route::get('/greeting', function () {
-    return 'Hello World';
+Route::get('/test', function () {
+    return response()->json(['message' => 'Your request was successful']);
 });
 
 // regis pegawai di sini

@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends BaseController
 {
+    public function index(): JsonResponse
+    {
+        $pegawais = Pegawai::all();
+        return response()->json($pegawais, 200);
+    }
+
     public function register(Request $request): JsonResponse
     {
         $validator = Validator::make($request->all(), [
