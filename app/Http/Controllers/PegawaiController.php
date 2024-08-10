@@ -33,8 +33,9 @@ class PegawaiController extends Controller
             ];
             return response()->json([
                 'success' => true,
-                'message' => 'Berhasil Ambil data pegawai',
-                'data'    => $user
+                'message' => 'Berhasil Login',
+                'data'    => $user->nama_pegawai, 
+                'token'   => $token
             ], 200);
         } else {
             // Password tidak cocok atau user tidak ditemukan
