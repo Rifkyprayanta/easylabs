@@ -22,6 +22,8 @@ Route::get('/test', function () {
     return response()->json(['message' => 'Your request was successful']);
 });
 
+Route::get('/user', [App\Http\Controllers\Api\RegisterController::class, 'index']);
+
 // regis pegawai di sini
 Route::controller(RegisterController::class)->group(function(){
     Route::post('register', 'register');
