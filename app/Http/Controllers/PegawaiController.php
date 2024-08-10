@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 
-class PegawaiController extends BaseController
+class PegawaiController extends Controller
 {
     public function index(): JsonResponse
     {
@@ -31,10 +31,17 @@ class PegawaiController extends BaseController
                 'token' => $token,
                 'nama_pegawai' => $user->nama_pegawai
             ];
-            return $this->sendResponse($success, 'User login successfully.');
+            return response()->json([
+                'success' => true,
+                'message' => 'Berhasil Ambil data pegawai',
+                'data'    => $user
+            ], 200);
         } else {
             // Password tidak cocok atau user tidak ditemukan
-            return $this->sendError('Unauthorized.', ['error' => 'Unauthorized']);
+            return response()->json([
+                'success' => false,
+                'message' => 'Gagal Ambil Data',
+            ], 401);
         }
     }
 
