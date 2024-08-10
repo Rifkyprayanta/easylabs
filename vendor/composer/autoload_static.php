@@ -543,7 +543,10 @@ class ComposerStaticInitbfe12996eeecb6fdc8713a9fd9d431f8
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Helper\\Helper' => __DIR__ . '/../..' . '/app/Helper/Helper.php',
+        'App\\Helper\\ZplPrinter' => __DIR__ . '/../..' . '/app/Helper/ZplPrinter.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\PegawaiController' => __DIR__ . '/../..' . '/app/Http/Controllers/PegawaiController.php',
         'App\\Http\\Controllers\\api\\BaseController' => __DIR__ . '/../..' . '/app/Http/Controllers/api/BaseController.php',
         'App\\Http\\Controllers\\api\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/api/DashboardController.php',
         'App\\Http\\Controllers\\api\\DiagnosaController' => __DIR__ . '/../..' . '/app/Http/Controllers/api/DiagnosaController.php',

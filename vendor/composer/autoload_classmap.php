@@ -8,7 +8,10 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Helper\\Helper' => $baseDir . '/app/Helper/Helper.php',
+    'App\\Helper\\ZplPrinter' => $baseDir . '/app/Helper/ZplPrinter.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\PegawaiController' => $baseDir . '/app/Http/Controllers/PegawaiController.php',
     'App\\Http\\Controllers\\api\\BaseController' => $baseDir . '/app/Http/Controllers/api/BaseController.php',
     'App\\Http\\Controllers\\api\\DashboardController' => $baseDir . '/app/Http/Controllers/api/DashboardController.php',
     'App\\Http\\Controllers\\api\\DiagnosaController' => $baseDir . '/app/Http/Controllers/api/DiagnosaController.php',
