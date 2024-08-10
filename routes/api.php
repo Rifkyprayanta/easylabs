@@ -36,7 +36,7 @@ Route::middleware('auth:sanctum')->controller(PasienController::class)->group(fu
     Route::get('/parameterRegis','parameterRegistrasiPasien');
 });
 
-Route::middleware('auth:sanctum')->get('/generate-barcode', [GenerateBarcodeController::class, 'generateBarcode']);
+Route::middleware('auth:sanctum')->get('/generate-barcode', [GenerateBarcodeController::class, 'generate']);
 
 Route::middleware('auth:sanctum')->controller(PasienController::class)->group(function() {
     Route::post('/registrasiPasien', 'registrasiPasien');

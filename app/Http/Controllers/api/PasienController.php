@@ -75,8 +75,14 @@ class PasienController extends Controller
         $query = Pasien::whereBetween('created_at', [$startDate, $endDate]);
 
         if ($name) {
-            // Filter nama jika parameter nama disediakan
-            $query->where('nama', 'LIKE', "%$name%");
+            // Cek apakah $name berupa angka
+            if (is_numeric($name)) {
+                // Filter berdasarkan id_pasien jika parameter nama berupa angka
+                $query->where('id_pasien', $name);
+            } else {
+                // Filter nama jika parameter nama bukan angka
+                $query->where('nama', 'LIKE', "%$name%");
+            }
         }
 
         $pasiens = $query->get();
@@ -127,6 +133,9 @@ class PasienController extends Controller
             $pasien = Pasien::create([
                 'nik' => $request->nik,
                 'sim' => $request->sim,
+                'tekanan_darah' => $request->tekanan_darah,
+                'berat_badan' => $request->berat_badan,
+                'tinggi_badan' => $request->tinggi_badan,
                 'nama' => $request->nama,
                 'tempat_lahir' => $request->tempat_lahir,
                 'tanggal_lahir' => $request->tanggal_lahir,
@@ -145,39 +154,10 @@ class PasienController extends Controller
             ]);
         }
 
-        // Insert the tindakan record
-        $tindakan = Tindakan::create([
-            'id_pasien' => $pasien->id
-            // 'id_tindakan' => $request->id_tindakan,
-            // 'nama_tindakan' => $request->nama_tindakan,
-            // 'harga_tindakan' => $request->harga_tindakan,
-            // 'id_pembayaran' => $request->id_pembayaran,
-            // 'id_sub_lab' => $request->id_sub_lab,
-            // 'nama_sub_lab' => $request->nama_sub_lab,
-            // 'id_spesimen' => $request->id_spesimen,
-            // 'jenis_spesimen' => $request->jenis_spesimen,
-            // 'nama_spesimen_klinis' => $request->nama_spesimen_klinis,
-            // 'flag_barcode' => $request->flag_barcode,
-            // 'jenis_rujukan' => $request->jenis_rujukan,
-            // 'sex_rujukan' => $request->sex_rujukan,
-            // 'rentang_bwh_umur' => $request->rentang_bwh_umur,
-            // 'rentang_atas_umur' => $request->rentang_atas_umur,
-            // 'rentang_bwh_rujukan' => $request->rentang_bwh_rujukan,
-            // 'rentang_atas_rujukan' => $request->rentang_atas_rujukan,
-            // 'nilai_kualitatif' => $request->nilai_kualitatif,
-            // 'flag_rujukan' => $request->flag_rujukan,
-            // 'rentang_atas_krits_1' => $request->rentang_atas_krits_1,
-            // 'rentang_atas_krits_2' => $request->rentang_atas_krits_2,
-            // 'rentang_bwh_krits_1' => $request->rentang_bwh_krits_1,
-            // 'rentang_bwh_krits_2' => $request->rentang_bwh_krits_2,
-            // 'flag_krits' => $request->flag_krits,
-            // 'tampil_desimal' => $request->tampil_desimal
-        ]);
-
         return response()->json([
             'message' => 'Registrasi Pasien telah berhasil',
             'pasien' => $pasien,
-            'tindakan' => $tindakan
+            // 'tindakan' => $tindakan
         ], 201);
     }
 
