@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\RegisterController;
+use App\Http\Controllers\Api\RegisterController;
 use App\Http\Controllers\API\PasienController;
 use App\Http\Controllers\api\RegistrasiPasienController;
 use App\Http\Controllers\api\GenerateBarcodeController;
@@ -17,13 +17,14 @@ use App\Http\Controllers\api\GenerateBarcodeController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+Route::post('login', [RegisterController::class, 'login']);
 
 // regis pegawai di sini
-Route::controller(RegisterController::class)->group(function(){
-    Route::post('register', 'register');
-    Route::post('login', 'login');
-    Route::post('logout', 'logout');
-});
+// Route::controller(RegisterController::class)->group(function(){
+//     Route::post('register', 'register');
+//     Route::post('login', 'login');
+//     Route::post('logout', 'logout');
+// });
 
 Route::middleware('auth:sanctum')->controller(PasienController::class)->group(function() {
     // mencari pasien bedasarkan tanggal
