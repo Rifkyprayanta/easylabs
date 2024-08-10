@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Pegawai;
 use App\Http\Controllers\API\RegisterController;
 use App\Http\Controllers\API\PasienController;
 use App\Http\Controllers\api\RegistrasiPasienController;
@@ -19,7 +20,10 @@ use App\Http\Controllers\api\GenerateBarcodeController;
 */
 
 Route::get('/test', function () {
-    return response()->json(['message' => 'Your request was successful']);
+    $pegawais = Pegawai::all();
+    return response()->json(
+        ['message' => 'Your request was successful',
+        'data' => $pegawais,200]);
 });
 
 Route::get('/user', [RegisterController::class, 'index']);
