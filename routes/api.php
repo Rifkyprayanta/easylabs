@@ -26,7 +26,7 @@ Route::get('/test', function () {
         'data' => $pegawais,200]);
 });
 
-Route::get('/pegawai', [PegawaiController::class, 'index']);
+Route::middleware('auth:sanctum')->get('/pegawai', [PegawaiController::class, 'index']);
 Route::post('/login', [PegawaiController::class, 'login']);
 Route::post('/logout', [PegawaiController::class, 'logout']);
 // regis pegawai di sini

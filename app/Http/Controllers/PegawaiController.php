@@ -51,6 +51,9 @@ class PegawaiController extends Controller
         // Hapus token autentikasi saat ini
         $request->user()->currentAccessToken()->delete();
         
-        return $this->sendResponse([], 'User logged out successfully.');
+        return response()->json([
+            'success' => true,
+            'message' => 'Berhasil Logout',
+        ], 200);
     }
 }
