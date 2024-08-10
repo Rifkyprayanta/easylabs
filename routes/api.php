@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Pegawai;
 use App\Http\Controllers\PegawaiController;
-use App\Http\Controllers\api\RegisterController;
+use App\Http\Controllers\API\RegisterController;
 //use App\Http\Controllers\api\RegistrasiPasienController;
 //use App\Http\Controllers\api\GenerateBarcodeController;
 
