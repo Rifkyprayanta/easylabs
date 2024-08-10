@@ -18,6 +18,10 @@ use App\Http\Controllers\api\GenerateBarcodeController;
 |
 */
 
+Route::get('/greeting', function () {
+    return 'Hello World';
+});
+
 // regis pegawai di sini
 Route::controller(RegisterController::class)->group(function(){
     Route::post('register', 'register');
