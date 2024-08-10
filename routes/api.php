@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Pegawai;
 use App\Http\Controllers\PegawaiController;
-//use App\Http\Controllers\API\PasienController;
+use App\Http\Controllers\api\RegisterController;
 //use App\Http\Controllers\api\RegistrasiPasienController;
 //use App\Http\Controllers\api\GenerateBarcodeController;
 
@@ -26,7 +26,8 @@ Route::get('/test', function () {
         'data' => $pegawais,200]);
 });
 
-Route::get('/example', [PegawaiController::class, 'index']);
+Route::get('/pegawai', [PegawaiController::class, 'index']);
+Route::post('/login', [RegisterController::class, 'login']);
 // regis pegawai di sini
 // Route::controller(RegisterController::class)->group(function(){
 //     Route::post('register', 'register');
