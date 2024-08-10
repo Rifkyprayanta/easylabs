@@ -26,7 +26,7 @@ Route::get('/test', function () {
         'data' => $pegawais,200]);
 });
 
-Route::get('/users', [PegawaiController::class, 'index']);
+Route::get('/example', [PegawaiController::class, 'index']);
 // regis pegawai di sini
 Route::controller(RegisterController::class)->group(function(){
     Route::post('register', 'register');
