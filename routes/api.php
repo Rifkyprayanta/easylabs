@@ -2,10 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-//use App\Http\Controllers\API\RegisterController;
-//use App\Http\Controllers\API\PasienController;
-//use App\Http\Controllers\api\RegistrasiPasienController;
-//use App\Http\Controllers\api\GenerateBarcodeController;
+use App\Http\Controllers\API\RegisterController;
+use App\Http\Controllers\API\PasienController;
+use App\Http\Controllers\api\RegistrasiPasienController;
+use App\Http\Controllers\api\GenerateBarcodeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +22,8 @@ Route::get('/test', function () {
     return response()->json(['message' => 'Your request was successful']);
 });
 
-Route::get('/user', 'App\Http\Controllers\Api\RegisterController@index');
+Route::get('/user', [RegisterController::class, 'index']);
+
 // regis pegawai di sini
 Route::controller(RegisterController::class)->group(function(){
     Route::post('register', 'register');
